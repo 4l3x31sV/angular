@@ -1,3 +1,4 @@
+import { Usuario } from './clases/usuario';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular';
+  public title: String = 'angular';
+  public usuarios: Usuario;
+
+  constructor() {
+    this.usuarios = new Usuario('Alex', 'Carrillo');
+
+  }
 }
