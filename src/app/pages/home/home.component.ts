@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   public txtUsujario: String;
+  public fecha: Date = new Date();
+  public moneda: Number = 123;
   constructor() { }
 
   ngOnInit() {
