@@ -10,8 +10,7 @@ export class AppComponent {
   public title: String = 'angular';
   public usuarios: any;
   constructor() {
-    this.usuarios = new Usuario('Alex', 'Carrillo');
-    const numero = 'asdasd';
+
   }
   setTitulo(nombre: String) {
     if (true) {
