@@ -8,10 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public title: String = 'angular';
-  public usuarios: Usuario;
-
+  public usuarios: any;
   constructor() {
     this.usuarios = new Usuario('Alex', 'Carrillo');
+    const numero = 'asdasd';
+  }
+  setTitulo(nombre: String) {
+    if (true) {
+      console.log('true');
+    }
+    for(let i=0; i<10;i++) {
 
+    }
   }
 }
