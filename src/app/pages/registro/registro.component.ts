@@ -18,7 +18,7 @@ export class RegistroComponent implements OnInit {
 
   ngOnInit() {
     this.regForm = this.formBuilder.group({
-      nombre:['', Validators.required],
+      txtNombre:['', Validators.required],
       apellido:['', Validators.required],
       edad:['', Validators.required]
     });

@@ -2,12 +2,12 @@
 <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
     <mat-form-field>
       <input matInput placeholder="Nombre"
-             formControlName="nombre"
-             name="nombre"
+             formControlName="txtNombre"
+             name="idNombre"
              [(ngModel)]="nombre"
               required >
       <mat-error
-        *ngIf="regForm.controls['nombre'].hasError('required') && regForm.controls['nombre'].touched">
+        *ngIf="regForm.controls['txtNombre'].hasError('required') && regForm.controls['txtNombre'].touched">
         Nombre es Requerido
       </mat-error>
     </mat-form-field>
@@ -27,7 +27,7 @@
   <mat-form-field>
     <input matInput placeholder="Edad"
            formControlName="edad"
-           name="edad"
+           name="idEdad"
            [(ngModel)]="edad"
            required >
     <mat-error *ngIf="regForm.controls['edad'].hasError('required') && regForm.controls['edad'].touched">
