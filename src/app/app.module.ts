@@ -12,6 +12,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ErrorComponent } from './pages/error/error.component';
 import {ServiciosService} from './services/servicios.service';
 import { RegistroComponent } from './pages/registro/registro.component';
+import {UtilServiceService} from './services/util-service.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { RegistroComponent } from './pages/registro/registro.component';
     ReactiveFormsModule
   ],
   providers: [
-    ServiciosService
+    ServiciosService,
+    UtilServiceService
   ],
   bootstrap: [AppComponent]
 })
