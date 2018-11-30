@@ -1,0 +1,50 @@
+
+<form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput placeholder="Nombre"
+             formControlName="nombre"
+             name="nombre"
+             [(ngModel)]="nombre"
+              required >
+      <mat-error
+        *ngIf="regForm.controls['nombre'].hasError('required') && regForm.controls['nombre'].touched">
+        Nombre es Requerido
+      </mat-error>
+    </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input matInput placeholder="Apellido"
+           formControlName="apellido"
+           name="apellido"
+           [(ngModel)]="apellido"
+           required >
+    <mat-error
+      *ngIf="regForm.controls['apellido'].hasError('required') && regForm.controls['apellido'].touched"
+    >
+      Apellido es Requerido
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Edad"
+           formControlName="edad"
+           name="edad"
+           [(ngModel)]="edad"
+           required >
+    <mat-error *ngIf="regForm.controls['edad'].hasError('required') && regForm.controls['edad'].touched">
+      Edad es Requerido
+    </mat-error>
+  </mat-form-field>
+  <br />
+  <button mat-raised-button (click)="miFuncion()"  color="primary">Registrar</button>
+  </form>
+<br />
+<h1>{{nombre}}</h1>
+
+<div>
+  <div *ngIf="mostrar">
+    Muestra Mensaje
+  </div>
+  <br />
+  <button mat-button color="primary" (click)="cambiarValor()">Cambiar Valor</button>
+</div>
+

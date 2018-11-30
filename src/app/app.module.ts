@@ -5,19 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialComponent} from './material.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ErrorComponent } from './pages/error/error.component';
 import {ServiciosService} from './services/servicios.service';
+import { RegistroComponent } from './pages/registro/registro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    ErrorComponent
+    ErrorComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import {ServiciosService} from './services/servicios.service';
     BrowserAnimationsModule,
     MaterialComponent,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     ServiciosService

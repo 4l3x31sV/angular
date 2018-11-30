@@ -12,4 +12,9 @@
   {{fecha | date:"MM/dd/yy" }}
   <br />
   {{moneda | currency}}
+
+  <ul *ngFor="let usuario of usuarios">
+    <li>{{usuario.nombre}} {{usuario.apellido}}</li>
+  </ul>
+
 </form>
