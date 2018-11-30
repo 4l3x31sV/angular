@@ -38,15 +38,16 @@ export class RegistroComponent implements OnInit {
       };
       window.localStorage.setItem('data', this.usuario.nombre);
       this.utilService.setData(this.usuario);
-      alert('Formulario es valido');
+
+      this.router.navigate(['home']);
     }
   }
   miFuncion() {
-    alert(this.nombre);
+    // alert(this.nombre);
   }
   cambiarValor() {
 
     this.mostrar = !this.mostrar;
-    this.router.navigate(['home']);
+
   }
 }
