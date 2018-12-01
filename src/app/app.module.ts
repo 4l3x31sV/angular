@@ -13,6 +13,10 @@ import { ErrorComponent } from './pages/error/error.component';
 import {ServiciosService} from './services/servicios.service';
 import { RegistroComponent } from './pages/registro/registro.component';
 import {UtilServiceService} from './services/util-service.service';
+import { InicioComponent } from './pages/inicio/inicio.component';
+import { ActualizarComponent } from './pages/actualizar/actualizar.component';
+import { ListarComponent } from './pages/listar/listar.component';
+import { SheetComponent } from './pages/inicio/sheet/sheet.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import {UtilServiceService} from './services/util-service.service';
     HomeComponent,
     LoginComponent,
     ErrorComponent,
-    RegistroComponent
+    RegistroComponent,
+    InicioComponent,
+    ActualizarComponent,
+    ListarComponent,
+    SheetComponent
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,4 @@
 <form>
-  <mat-form-field>
-    <input matInput
-           placeholder="Usuario"
-           [(ngModel)]="txtUsujario"
-           name="txtUsuario"
-           />
-  </mat-form-field>
   <br />
   {{txtUsujario | uppercase}}
   <br />
@@ -14,11 +7,7 @@
   {{moneda | currency}}
 
   <ul *ngFor="let usuario of usuarios">
-    <li>{{usuario.nombre}} {{usuario.apellido}}</li>
+    <li>{{usuario.nombre}}<button mat-button (click)="mostrarUsuario(usuario)">Mostrar Datos</button></li>
   </ul>
 
 </form>
-<div>
-  <h1>{{usuarios2.nombre}} {{usuarios2.apellido}}</h1>
-  <h2>Tiene {{usuarios2.edad}} años</h2>
-</div>

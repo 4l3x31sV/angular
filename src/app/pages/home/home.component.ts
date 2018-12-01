@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import {ServiciosService} from '../../services/servicios.service';
 import {Usuario} from '../../clases/usuario';
 import {UtilServiceService} from '../../services/util-service.service';
-import {User} from "../../clases/user";
+import {User} from '../../clases/user';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnChanges {
   public txtUsujario: string;
   public fecha: Date = new Date();
   public moneda: Number = 123;
@@ -25,6 +25,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   }
+  ngOnChanges() {
+
+  }
 
   public llamarServicio() {
     this.service
@@ -35,6 +38,14 @@ export class HomeComponent implements OnInit {
     }, error => {
         alert('Error');
       });
+  }
+  public mostrarUsuario(user: Usuario) {
+    this.service.getGlobal<Usuario>('/user/' + user.nombre,null).subscribe(data => {
+      console.log(data);
+      window.alert('Nombre: ' + data.nombre + ' Apellido: ' + data.apellido);
+    }, error=> {
+      window.alert('Error al encontrar usuario');
+    });
   }
 
 }

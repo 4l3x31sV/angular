@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {User} from '../../clases/user';
 import {UtilServiceService} from '../../services/util-service.service';
 import {Router} from "@angular/router";
+import { ServiciosService } from 'src/app/services/servicios.service';
 
 @Component({
   selector: 'app-registro',
@@ -18,7 +19,8 @@ export class RegistroComponent implements OnInit {
   public mostrar: boolean;
   constructor(private formBuilder: FormBuilder,
               private utilService: UtilServiceService,
-              private router: Router) { }
+              private router: Router,
+              private service: ServiciosService) { }
 
   ngOnInit() {
     this.regForm = this.formBuilder.group({
@@ -31,15 +33,20 @@ export class RegistroComponent implements OnInit {
     if(this.regForm.invalid) {
       alert('formulario invalido');
     } else {
-      this.usuario = {
+      const obj = {
         nombre:this.nombre,
         apellido: this.apellido,
         edad: this.edad
       };
-      window.localStorage.setItem('data', this.usuario.nombre);
-      this.utilService.setData(this.usuario);
-
-      this.router.navigate(['home']);
+      this.service.postGlobal<User>(obj, '/user/insert',null).subscribe(data => {
+        this.usuario = data;
+        window.localStorage.setItem('data', this.usuario.nombre);
+        this.utilService.setData(this.usuario);
+        window.alert('El usuario con id: ' + data._id + ' se ha registrado');
+        this.router.navigate(['inicio']);
+      },error=> {
+        window.alert('Error al registrar usuario');
+      });
     }
   }
   miFuncion() {

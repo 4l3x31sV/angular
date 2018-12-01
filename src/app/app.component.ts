@@ -1,5 +1,7 @@
+import { Router } from '@angular/router';
 import { Usuario } from './clases/usuario';
 import { Component } from '@angular/core';
+import { Route } from '@angular/compiler/src/core';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +11,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   public title: String = 'angular';
   public usuarios: any;
-  constructor() {
+  constructor(private router: Router) {
 
   }
   setTitulo(nombre: String) {
@@ -19,5 +21,11 @@ export class AppComponent {
     for(let i=0; i<10;i++) {
 
     }
+  }
+  goToHome() {
+    this.router.navigate(['inicio']);
+  }
+  goToRegistro() {
+    this.router.navigate(['']);
   }
 }
